@@ -1,8 +1,8 @@
-package com.rover12421.asmjson.visit
+package com.rover12421.tol.asm.visit
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo
-import com.rover12421.asmjson.ASMifierJson
-import com.rover12421.asmjson.compile.AsmJsonCompile
+import com.rover12421.tol.asm.json.ASMifierJson
+import com.rover12421.tol.asm.json.AsmJsonCompile
 import org.objectweb.asm.Handle
 
 class VInvokeDynamicInsn : VisitPrinter {

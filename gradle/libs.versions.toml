@@ -1,0 +1,29 @@
+[versions]
+asm = "9.7"
+antlr = "4.13.1"
+jackson = "2.17.0"
+
+[libraries]
+asm-asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
+asm-commons = { module = "org.ow2.asm:asm-commons", version.ref = "asm" }
+asm-utils = { module = "org.ow2.asm:asm-util", version.ref = "asm" }
+
+antlr = { module = "org.antlr:antlr4", version.ref = "antlr" }
+antlr-runtime = { module = "org.antlr:antlr4-runtime", version.ref = "antlr" }
+
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jackson" }
+jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+
+slf4j-api = { module = "org.slf4j:slf4j-api", version = "2.0.13" }
+maven-impl = { module = "org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven", version = "3.3.0" }
+guava = { module = "com.google.guava:guava", version = "33.1.0-jre" }
+commons-codec = { module = "commons-codec:commons-codec", version = "1.16.1" }
+
+[bundles]
+asm = ["asm-asm", "asm-commons", "asm-utils"]
+antlr = ["antlr", "antlr-runtime"]
+jackson = ["jackson-core", "jackson-annotations", "jackson-databind", "jackson-module-kotlin"]
+
+[plugins]

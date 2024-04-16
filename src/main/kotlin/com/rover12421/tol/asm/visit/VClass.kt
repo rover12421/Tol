@@ -1,16 +1,13 @@
-package com.rover12421.asmjson.visit
+package com.rover12421.tol.asm.visit
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.rover12421.asm.RsClassWriter
-import com.rover12421.asm.util.AsmUtil.getPackageName
-import com.rover12421.asm.util.AsmUtil.getSimpleClassName
-import com.rover12421.asmjson.ASMifierJson
-import com.rover12421.asmjson.AsmJsonConstant
-import com.rover12421.asmjson.compile.AsmJsonCompile
-import com.rover12421.asmjson.util.AsmJsonUtil.toJson
-import org.objectweb.asm.ClassWriter
-import java.util.*
+import com.rover12421.tol.asm.compile.RsClassWriter
+import com.rover12421.tol.asm.json.ASMifierJson
+import com.rover12421.tol.asm.json.AsmJsonCompile
+import com.rover12421.tol.asm.json.AsmJsonConstant
+import com.rover12421.tol.asm.util.AsmJsonUtil
+import org.apache.commons.lang3.ClassUtils
 
 class VClass(
     asMifier: ASMifierJson?,
@@ -184,7 +181,7 @@ class VClass(
     }
 
     fun toJson(): String {
-        return toJson(this)
+        return AsmJsonUtil.toJson(this)
     }
 
     companion object {
@@ -213,7 +210,7 @@ class VClass(
         if (fullName == null) {
             fullName = "module-info"
         }
-        packageName = getPackageName(fullName!!)
-        simpleName = getSimpleClassName(fullName!!)
+        packageName = ClassUtils.getPackageName(fullName!!)
+        simpleName = ClassUtils.getShortClassName(fullName!!)
     }
 }

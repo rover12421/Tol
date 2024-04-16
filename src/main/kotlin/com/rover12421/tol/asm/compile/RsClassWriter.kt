@@ -1,6 +1,6 @@
 package com.rover12421.tol.asm.compile
 
-import com.rover12421.lotus.util.Log
+import com.rover12421.tol.util.Log
 import org.objectweb.asm.ClassWriter
 
 class RsClassWriter(flags: Int, private val classLoader: ClassLoader) : ClassWriter(flags) {

@@ -10,12 +10,27 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib"))
+
+    implementation(libs.bundles.asm)
+    implementation(libs.bundles.antlr)
+    implementation(libs.bundles.jackson)
+    implementation(libs.slf4j.api)
+    implementation(libs.maven.impl)
+    implementation(libs.guava)
+    implementation(libs.commons.codec)
+
     testImplementation(kotlin("test"))
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
+val javaVersion = 21
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersion))
+}
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(javaVersion)
 }

@@ -2,9 +2,10 @@
 
 package com.rover12421.tol.asm.util
 
-import com.rover12421.asm.compile.AsmDumpJavaCompile
-import com.rover12421.lotus.util.FilesUtil
-import com.rover12421.lotus.util.Log
+
+import com.rover12421.tol.asm.compile.AsmDumpJavaCompile
+import com.rover12421.tol.util.FilesUtil
+import com.rover12421.tol.util.Log
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.util.ASMifier
 import org.objectweb.asm.util.Printer

@@ -1,9 +1,9 @@
-package com.rover12421.asmjson.visit
+package com.rover12421.tol.asm.visit
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonTypeInfo
-import mirror.org.objectweb.asm.ConstantDynamicMirror.getBootstrapMethodArgumentsUnsafe
+import com.rover12421.tol.asm.visit.NHandle
 import org.objectweb.asm.ConstantDynamic
 import org.objectweb.asm.Handle
 
@@ -24,7 +24,7 @@ class NConstantDynamic @JsonCreator constructor(
         constantDynamic.name,
         constantDynamic.descriptor,
         constantDynamic.bootstrapMethod,
-        getBootstrapMethodArgumentsUnsafe!!.invoke(constantDynamic)
+        Array(constantDynamic.bootstrapMethodArgumentCount) { constantDynamic.getBootstrapMethodArgument(it) }
     ) {
     }
 

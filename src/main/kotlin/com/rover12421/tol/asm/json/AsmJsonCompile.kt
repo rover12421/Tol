@@ -1,6 +1,6 @@
-package com.rover12421.asmjson.compile
+package com.rover12421.tol.asm.json
 
-import com.rover12421.asmjson.visit.NLabel
+import com.rover12421.tol.asm.visit.NLabel
 import org.objectweb.asm.*
 import java.util.*
 

@@ -1,9 +1,10 @@
-package com.rover12421.asmjson.visit
+package com.rover12421.tol.asm.visit
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonTypeInfo
-import com.rover12421.asmjson.ASMifierJson
-import com.rover12421.asmjson.compile.AsmJsonCompile
+import com.rover12421.tol.asm.json.ASMifierJson
+import com.rover12421.tol.asm.json.AsmJsonCompile
+import com.rover12421.tol.asm.visit.*
 import org.objectweb.asm.*
 import org.objectweb.asm.util.Printer
 import java.util.*

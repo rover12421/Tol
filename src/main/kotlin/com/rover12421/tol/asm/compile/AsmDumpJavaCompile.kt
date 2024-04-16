@@ -1,6 +1,7 @@
-package com.rover12421.asm.compile
+package com.rover12421.tol.asm.compile
 
-import com.rover12421.lotus.util.Log.info
+import com.rover12421.tol.util.Log
+import com.rover12421.tol.util.Log.info
 import org.apache.commons.lang3.StringEscapeUtils
 import org.apache.commons.lang3.StringUtils
 import org.objectweb.asm.*
@@ -305,14 +306,13 @@ object AsmDumpJavaCompile {
     private fun splitLine2(line: String): List<Array<String?>?> {
         var line = line
         if (DEBUG) {
-            info("[splitLine2][line] : $line")
+            Log.info("[splitLine2][line] : $line")
         }
         if (line.endsWith(");")) {
             line = StringUtils.substring(line, 0, -2)
         }
         val list: MutableList<Array<String?>?> = mutableListOf()
-        val split: Array<String>
-        split = if (line.startsWith("mv.visitInvokeDynamicInsn(")
+        val split = if (line.startsWith("mv.visitInvokeDynamicInsn(")
             || line.startsWith("methodVisitor.visitInvokeDynamicInsn(")
         ) {
             val index = line.indexOf("{")
@@ -367,7 +367,7 @@ object AsmDumpJavaCompile {
         }
         if (DEBUG) {
             for (strings in list) {
-                info("[splitLine2] : " + Arrays.toString(strings))
+                info("[splitLine2] : " + strings.contentToString())
             }
         }
         return list
