@@ -68,7 +68,7 @@ class MavenClassLoaderHelper {
      * 获取ClassLoader
      * 每次都是获取全新的ClassLoader
      */
-    fun getClassLoader(parentClassLoader: ClassLoader? = null) : URLClassLoader {
+    fun getClassLoader(parentClassLoader: ClassLoader? = Thread.currentThread().contextClassLoader) : URLClassLoader {
         val urls = getDependencyUrls()
         return URLClassLoader(urls, parentClassLoader)
     }

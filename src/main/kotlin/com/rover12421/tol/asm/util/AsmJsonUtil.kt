@@ -202,10 +202,10 @@ object AsmJsonUtil {
         return vclass.toJson()
     }
 
-    fun classFile2JsonFile(clazzFile: Path, javaFile: Path) {
+    fun classFile2JsonFile(clazzFile: Path, jsonFile: Path) {
         val javaCode = class2Json(clazzFile)
-        Files.createDirectories(javaFile.parent)
-        Files.write(javaFile, javaCode.toByteArray(StandardCharsets.UTF_8))
+        Files.createDirectories(jsonFile.parent)
+        Files.write(jsonFile, javaCode.toByteArray(StandardCharsets.UTF_8))
     }
 
     fun VClass2ClassBytes(vClass: VClass, classLoader: ClassLoader = Thread.currentThread().contextClassLoader): ByteArray {
